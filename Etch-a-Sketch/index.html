@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Etch-a-Sketch</title>
+        <meta charset="UTF-8">
+
+        <style>
+            .onepass {background-color: green;}
+            .twopass {background-color: red;}
+        </style>
+    </head>
+    <body>
+        <button id='clear'>New Grid</button></br>
+        
+        <div id='container' style="width: 960px; margin: 0 auto; font-size: 0;
+        border: solid;">
+        </div>
+    
+    </body>
+    <script>
+        function drawGrid(n) {
+            const maxWidth = 960
+            for (i = 0; i < n * n; i++) {
+                const container = document.querySelector('#container');
+                let div = document.createElement('div');
+                div.setAttribute('id', 'special')
+                div.textContent = '' // 'a' + i;
+                div.style.width = (maxWidth - n * 2) / n + 'px';
+                div.style.height = (maxWidth - n * 2) / n + 'px';
+                div.style.display = 'inline-block';
+                container.appendChild(div); 
+
+                div.addEventListener('mouseenter', e => {
+                    if (div.getAttribute('class') == null) {
+                        div.setAttribute('class', 'onepass')
+                    }
+                    else {
+                        div.setAttribute('class', 'twopass')
+                    }
+                });
+            }
+        }
+
+        function clear() {
+            container.textContent = ''
+            n = prompt('Enter grid number. Default was 32');
+            drawGrid(n)
+        }
+
+        drawGrid(32)
+        let btn = document.querySelector('#clear')
+        btn.onclick = clear;
+        
+    </script>
+</html>
