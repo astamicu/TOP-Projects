@@ -1,5 +1,7 @@
 function add(a, b) {
-	return a + b;
+    result = a + b
+    console.log(result)
+	return result
 }
 
 function subtract(a, b) {
@@ -15,22 +17,65 @@ function divide(a, b) {
 }
 
 function operate(operator, a, b) {
-    return operator(a,b)
+    console.log(a, operator, b)
+    if (operator == add) {
+        add(a,b)
+    }
+    display.textContent = add(a,b)
 }
 
 const display = document.querySelector('p')
+const btn = document.querySelectorAll('button');
 
-function displayNumber() {
-    let btn = document.querySelectorAll('button');
-    btn.forEach(btn => btn.addEventListener('click', function() {
-        let selected = btn.value
-        display.textContent += selected;
-    }))
+function displayNumber(selected) {
+    if (selected == '+') {
+        display.textContent = ''
+    }
+
+    if (selected == '=') {
+        display.textContent = result
+    }
+
+
+    else {
+        yas = display.textContent += selected;
+        // console.log(yas)
+    }
 }
 
-displayNumber()
+btn.forEach(btn => btn.addEventListener('click', function() {
+    selected = ''
+    selected += btn.value
+    
+    if (selected == '+' || selected == '-' || selected == '/' || selected == '*') {
+        a = Number(yas)
+        // console.log(a)
+        // console.log(selected)
+        display.textContent = ''
+        if (selected == '+') {
+            operator = 'add'
+            // console.log(operator)
+            return operator
+        }
+    }
+    
+    if (selected == '=') {
+        b = Number(yas)
+        // console.log(a)
+        // console.log(operator)
+        // console.log(b)
+        // console.log(selected)
+        operate(operator, a, b)
+        
+    }
+    
+    displayNumber(selected)
+    
+}))
+
+// 
 
 function clearDisplay() {
     display.textContent = '';
-
 }
+
