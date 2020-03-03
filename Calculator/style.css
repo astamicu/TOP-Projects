@@ -1,0 +1,53 @@
+#container {
+    max-width: 400px;
+    margin: auto;
+}
+
+#buttons {
+    max-width: 300px;
+    float: left;
+}
+
+#operators {
+    max-width: 100px;
+    float: right;
+}
+
+.btn {
+    width: 90px;
+    height: 90px;
+    margin: 5px auto;
+    font-size: 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-operator {
+    background-color: orange;
+}
+
+.btn-operator:hover {
+    background-color: white;
+}
+
+.btn-operator:focus {
+    background-color: white;
+    color: orange;
+}
+
+
+/* remove mozilla dotted outline
+https://stackoverflow.com/questions/71074/how-to-remove-firefoxs-dotted-outline-on-buttons-as-well-as-links
+*/
+.btn::-moz-focus-inner {
+    border: 0;
+}
+
+p {
+    text-align: right;
+    font-size: 50px;
+    margin: 10px;
+    height: 60px;
+}
+  

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <head>
+        <title>Calculator</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="A simple calculator example">
+        <meta name="author" content="Andrei Lucu">
+
+        <link rel="stylesheet" href="./style.css">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    </head>
+    <body>
+        <div id='container'>
+            <div id='display' style='border: 3px solid'>
+                <p></p>
+            </div>
+            <div id='buttons'>
+                <button type="button" onclick="clearDisplay()" class="btn btn-light">AC</button>
+                <button type="button" class="btn btn-light">+/-</button>
+                <button type="button" class="btn btn-light">%</button>
+                <button type="button" value='7' class="btn btn-light">7</button>
+                <button type="button" value='8' class="btn btn-light">8</button>
+                <button type="button" value='9' class="btn btn-light">9</button>
+                <button type="button" value='4' class="btn btn-light">4</button>
+                <button type="button" value='5' class="btn btn-light">5</button>
+                <button type="button" value='6' class="btn btn-light">6</button>
+                <button type="button" value='1' class="btn btn-light">1</button>
+                <button type="button" value='2' class="btn btn-light">2</button>
+                <button type="button" value='3' class="btn btn-light">3</button>
+                <button type="button" value='0' class="btn btn-light" style="width: 185px;">0</button>
+                <button type="button" class="btn btn-light">,</button>
+            </div>
+            <div id='operators'>
+                <button type="button" value='/' class="btn btn-operator">/</button>
+                <button type="button" value='*'class="btn btn-operator">*</button>
+                <button type="button" value='-'class="btn btn-operator">-</button>
+                <button type="button" value='+'class="btn btn-operator">+</button>
+                <button type="button" onclick="operate()" class="btn btn-operator">=</button>
+            </div>
+        </div>
+        <script src="calculator.js"></script>
+    </body>
+</html>
