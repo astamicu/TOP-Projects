@@ -23,6 +23,10 @@
     border: none;
 }
 
+button:disabled {
+    cursor: not-allowed;
+}
+
 .btn-operator {
     background-color: orange;
 }
